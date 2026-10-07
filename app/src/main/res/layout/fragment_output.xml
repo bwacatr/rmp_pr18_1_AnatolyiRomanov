@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OutputFragment"
+    android:background="@color/black">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="20sp"
+        android:paddingTop="10dp"
+        android:background="@drawable/rectangle"
+        android:textScaleX="1.3"
+
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="@string/variantText" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle"
+        android:layout_gravity="center">
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/theme1"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            />
+
+        <EditText
+            android:inputType="none"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textColorHint="@color/black"
+            android:hint="@string/theme1"
+            android:background="@drawable/white_rectangle"
+            android:textAlignment="center"
+
+            />
+
+        <TextView
+
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/theme2"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            />
+
+        <EditText
+            android:inputType="none"
+            android:background="@drawable/white_rectangle"
+            android:height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/black"
+            android:hint="@string/theme2"
+
+            android:textAlignment="center"
+
+            />
+
+        <TextView
+
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/theme3"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            />
+
+        <EditText
+            android:inputType="none"
+            android:background="@drawable/white_rectangle"
+            android:height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/black"
+            android:hint="@string/theme3"
+
+            android:textAlignment="center"
+
+            />
+
+        <TextView
+
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/theme4"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            />
+
+        <EditText
+            android:inputType="none"
+            android:background="@drawable/white_rectangle"
+            android:height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/black"
+            android:hint="@string/theme4"
+
+            android:textAlignment="center"
+
+            android:layout_marginBottom="10dp"
+
+            />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="300dp"
+
+            android:layout_height="100dp"
+            android:textAlignment="center"
+            android:text="@string/GoBack"
+            android:textSize="20sp"
+            android:textStyle="bold"
+
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/button_rectangle"
+            android:onClick="BackBtn"/>
+    </RelativeLayout>
+
+</FrameLayout>

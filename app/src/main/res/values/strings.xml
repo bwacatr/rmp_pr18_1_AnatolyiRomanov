@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">rmp_pr18_Romanov</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome">Добро пожаловать в список билетов ПДД</string>
+    <string name="loginText">Введите логин</string>
+    <string name="passwordText">Введите пароль</string>
+    <string name="enterText">Войти</string>
+    <string name="createVariantText">Создать билет ПДД</string>
+    <string name="enterTheme1">Введите тему №1</string>
+    <string name="enterTheme2">Введите тему №2</string>
+    <string name="enterTheme3">Введите тему №3</string>
+    <string name="enterTheme4">Введите тему №4</string>
+    <string name="AddText">Добавить</string>
+    <string name="GoBack">Назад</string>
+    <string name="theme1">Тема №1</string>
+    <string name="theme2">Тема №2</string>
+    <string name="theme3">Тема №3</string>
+    <string name="theme4">Тема №4</string>
+    <string name="variantText">Билет ПДД</string>
+</resources>
