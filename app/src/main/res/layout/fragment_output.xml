@@ -35,15 +35,18 @@
             android:textSize="18sp"
             />
 
-        <EditText
-            android:inputType="none"
+        <TextView
+            android:paddingTop="7dp"
+            android:textSize="18sp"
             android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:textColorHint="@color/black"
             android:hint="@string/theme1"
             android:background="@drawable/white_rectangle"
+
             android:textAlignment="center"
+            android:id="@+id/themeOutput1"
 
             />
 
@@ -58,7 +61,9 @@
             android:textSize="18sp"
             />
 
-        <EditText
+        <TextView
+            android:paddingTop="7dp"
+            android:textSize="18sp"
             android:inputType="none"
             android:background="@drawable/white_rectangle"
             android:height="40dp"
@@ -69,6 +74,8 @@
             android:hint="@string/theme2"
 
             android:textAlignment="center"
+
+            android:id="@+id/themeOutput2"
 
             />
 
@@ -83,7 +90,9 @@
             android:textSize="18sp"
             />
 
-        <EditText
+        <TextView
+            android:paddingTop="7dp"
+            android:textSize="18sp"
             android:inputType="none"
             android:background="@drawable/white_rectangle"
             android:height="40dp"
@@ -94,6 +103,8 @@
             android:hint="@string/theme3"
 
             android:textAlignment="center"
+
+            android:id="@+id/themeOutput3"
 
             />
 
@@ -108,7 +119,9 @@
             android:textSize="18sp"
             />
 
-        <EditText
+        <TextView
+            android:paddingTop="7dp"
+            android:textSize="18sp"
             android:inputType="none"
             android:background="@drawable/white_rectangle"
             android:height="40dp"
@@ -122,6 +135,8 @@
 
             android:layout_marginBottom="10dp"
 
+            android:id="@+id/themeOutput4"
+
             />
 
     </LinearLayout>
@@ -132,6 +147,7 @@
         android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/goBackBtn"
             android:layout_width="300dp"
 
             android:layout_height="100dp"
@@ -141,8 +157,8 @@
             android:textStyle="bold"
 
             android:layout_centerHorizontal="true"
-            android:background="@drawable/button_rectangle"
-            android:onClick="BackBtn"/>
+            android:background="@drawable/button_rectangle"/>
+
     </RelativeLayout>
 
 </FrameLayout>

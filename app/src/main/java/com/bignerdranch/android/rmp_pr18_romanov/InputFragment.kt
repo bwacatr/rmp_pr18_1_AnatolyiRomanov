@@ -1,10 +1,18 @@
 package com.bignerdranch.android.rmp_pr18_romanov
 
+import android.content.Context.MODE_PRIVATE
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
+import com.google.gson.Gson
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -17,6 +25,19 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class InputFragment : Fragment() {
+
+    var PREFS_FILE = "Account"
+    var PREF_NAME = "Name"
+
+
+
+
+    lateinit var preferences: SharedPreferences
+
+    lateinit var ed: SharedPreferences.Editor
+
+    lateinit var addButton : Button
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -35,6 +56,76 @@ class InputFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_input, container, false)
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Находим кнопку по её ID из layout-файла
+        addButton = view.findViewById(R.id.addBtn)
+
+        // Обрабатываем нажатие
+        addButton.setOnClickListener {
+            // Действие при клике
+            handler(view)
+        }
+    }
+
+    fun handler(view: View)
+    {
+        var theme1 : EditText = view.findViewById(R.id.themeEdit1)
+        var theme2 : EditText = view.findViewById(R.id.themeEdit2)
+        var theme3 : EditText = view.findViewById(R.id.themeEdit3)
+        var theme4 : EditText = view.findViewById(R.id.themeEdit4)
+
+        preferences = requireActivity().getSharedPreferences(PREFS_FILE,MODE_PRIVATE)
+
+        if (theme1.text.toString().isNotEmpty() && theme2.text.toString().isNotEmpty() && theme3.text.toString()
+                .isNotEmpty() && theme4.text.toString().isNotEmpty()
+        ) {
+            val themeObject: ExamThemes = ExamThemes(
+                theme1.text.toString(),
+                theme2.text.toString(),
+                theme3.text.toString(),
+                theme4.text.toString()
+            )
+
+
+            val JSONThemes = Gson().toJson(themeObject)
+
+            val alert = AlertDialog.Builder(requireContext())
+                .setTitle("Загружено")
+                .setMessage(JSONThemes)
+                .setPositiveButton("OK",null)
+                .create()
+                .show()
+
+            ed = preferences.edit()
+
+            ed.putString("themeObject", JSONThemes)
+
+            ed.apply()
+
+            val fragmentManager: FragmentManager = parentFragmentManager
+            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+
+            fragmentTransaction.replace(R.id.fragment_container_view, OutputFragment())
+            fragmentTransaction.addToBackStack(InputFragment.toString())
+            fragmentTransaction.commit()
+        }
+        else
+        {
+            val alert = AlertDialog.Builder(requireContext())
+                .setTitle("Ошибка")
+                .setMessage("Одно или несколько из полей пусты")
+                .setPositiveButton("OK",null)
+                .create()
+                .show()
+        }
+
+
+
     }
 
     companion object {

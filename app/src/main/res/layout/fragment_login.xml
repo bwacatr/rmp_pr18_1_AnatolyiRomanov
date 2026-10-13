@@ -40,9 +40,10 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:textColorHint="@color/black"
-            android:text="@string/loginText"
+            android:hint="@string/loginText"
             android:background="@drawable/white_rectangle"
             android:textAlignment="center"
+            android:id="@+id/login"
 
             />
 
@@ -68,6 +69,8 @@
 
             android:textAlignment="center"
 
+            android:id="@+id/password"
+
             />
 
     </LinearLayout>
@@ -88,7 +91,9 @@
 
             android:layout_centerHorizontal="true"
             android:background="@drawable/button_rectangle"
-            android:onClick="EnterBtn"/>
+            android:id="@+id/registerBtn"
+            android:onClick="handler"/>
+
     </RelativeLayout>
 
 </FrameLayout>
